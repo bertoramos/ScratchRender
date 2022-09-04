@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de origen\objects">
+      <UniqueIdentifier>{254a499b-2c00-4ef5-b713-4a813a5cef50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\objects">
+      <UniqueIdentifier>{03936469-a13b-4dbe-b36f-c0c41452ea5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\utils">
+      <UniqueIdentifier>{4134c535-3447-4bab-855e-15947ec27cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\utils">
+      <UniqueIdentifier>{55e0aa2b-0572-42bb-bc7e-5f4f2b36af54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\render">
+      <UniqueIdentifier>{0fc4d243-4765-427d-b766-208f9e7796f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\render">
+      <UniqueIdentifier>{2087865d-6ab2-4813-ba4c-f6bdf6bfeb27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Archivos de origen\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Archivos de origen\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Euler.cpp">
+      <Filter>Archivos de origen\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="mathutils.cpp">
+      <Filter>Archivos de origen\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Archivos de origen\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="rasterize.cpp">
+      <Filter>Archivos de origen\render</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Archivos de origen\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Context.cpp">
+      <Filter>Archivos de origen\objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="kernel.cuh">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Archivos de encabezado\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Euler.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="mathutils.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="mathutils_kernel.cuh">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Archivos de encabezado\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="rasterize.h">
+      <Filter>Archivos de encabezado\render</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Archivos de encabezado\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="kernel.cu">
+      <Filter>Archivos de origen</Filter>
+    </CudaCompile>
+    <CudaCompile Include="mathutils_kernel.cu">
+      <Filter>Archivos de origen\utils</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>
