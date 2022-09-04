@@ -3,9 +3,9 @@
 3D rendering built from scratch, using SDL2 and CUDA.
 
 ## TODO list
-[] Perform CUDA matrix operations with cuBlas
-[] Rasterization
-[] Shaders
+- Perform CUDA matrix operations with cuBlas
+- Rasterization
+- Shaders
 
 ## Bibliography
 
