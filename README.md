@@ -4,7 +4,7 @@
 
 ## Examples
 
-![Simple Cube](simple_cube_wireframe.png)
+![Simple Cube Wireframe](simple_cube_wireframe.png)
 
 ## TODO list
 - Camera navigation
