@@ -92,6 +92,9 @@
     <ClInclude Include="Context.h">
       <Filter>Archivos de encabezado\utils</Filter>
     </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="kernel.cu">

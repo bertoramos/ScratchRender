@@ -2,11 +2,10 @@
 #pragma once
 
 class Context {
-private:
+public:
 	float width = 500;
 	float height = 500;
 
-public:
 	Context(float width, float height) : width(width), height(height)
 	{}
 

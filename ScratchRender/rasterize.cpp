@@ -4,9 +4,38 @@
 #include "rasterize.h"
 #include "mathutils.h"
 #include "mathutils_kernel.cuh"
+#include "Context.h"
 
-void rasterize(SDL_Renderer* renderer, Scene* scene, int width, int height)
+void invert_camera_matrix(float* view_matrix, float* camera_matrix) {
+	
+
+	float** a = (float**)malloc(sizeof(float) * 1);
+	float** c = (float**)malloc(sizeof(float) * 1);
+	a[0] = camera_matrix;
+	c[0] = view_matrix;
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			std::cout << (*a)[i * 4 + j] << ", ";
+		}
+		std::cout << "\n";
+	}
+
+	invert(a, c, 3, 1);
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			std::cout << (*c)[i * 4 + j] << ", ";
+		}
+		std::cout << "\n";
+	}
+}
+
+void rasterize(SDL_Renderer* renderer, Scene* scene, Context context)
 {
+	int width = context.width;
+	int height = context.height;
+
 	Camera* cam = scene->camera;
 
 	for (int m = 0; m < scene->models.size(); m++) {
@@ -35,13 +64,24 @@ void rasterize(SDL_Renderer* renderer, Scene* scene, int width, int height)
 		Vector cam_right = cam->getRight();
 
 		// Transformation matrices
-		// FIXME : INVERT MATRIX
+		float* camera_matrix = (float*)malloc(4 * 4 * sizeof(float));
 		float* view_transform = (float*)malloc(4 * 4 * sizeof(float));
 
-		view_transform[0] = cam_right.x; view_transform[1] = cam->up.x; view_transform[2] = cam->forward.x; view_transform[3] = cam->center.x;
-		view_transform[4] = cam_right.y; view_transform[5] = cam->up.y; view_transform[6] = cam->forward.y; view_transform[7] = cam->center.y;
-		view_transform[8] = cam_right.z; view_transform[9] = cam->up.z; view_transform[10] = cam->forward.z; view_transform[11] = cam->center.z;
-		view_transform[12] = 0;        view_transform[13] = 0;          view_transform[14] = 0;              view_transform[15] = 1;
+		camera_matrix[0] = cam_right.x; camera_matrix[1] = cam->up.x; camera_matrix[2] = cam->forward.x;  camera_matrix[3] = cam->center.x;
+		camera_matrix[4] = cam_right.y; camera_matrix[5] = cam->up.y; camera_matrix[6] = cam->forward.y;  camera_matrix[7] = cam->center.y;
+		camera_matrix[8] = cam_right.z; camera_matrix[9] = cam->up.z; camera_matrix[10] = cam->forward.z; camera_matrix[11] = cam->center.z;
+		camera_matrix[12] = 0;          camera_matrix[13] = 0;        camera_matrix[14] = 0;              camera_matrix[15] = 1;
+
+		float** a = (float**)malloc(sizeof(float*));
+		float** c = (float**)malloc(sizeof(float*));
+
+		a[0] = camera_matrix;
+		c[0] = view_transform;
+
+		invert(a, c, 4, 1);
+
+		free(a);
+		free(c);
 
 		float* perspective = (float*)malloc(4 * 4 * sizeof(float));
 		float aspect = width / height;

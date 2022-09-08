@@ -1,9 +1,13 @@
 # ScratchRender
 
-3D rendering built from scratch, using SDL2 and CUDA.
+3D rendering built from scratch, using SDL2 and cuBLAS.
+
+## Examples
+
+![Simple Cube](simple_cube_wireframe.png)
 
 ## TODO list
-- Perform CUDA matrix operations with cuBlas
+- Camera navigation
 - Rasterization
 - Shaders
 
