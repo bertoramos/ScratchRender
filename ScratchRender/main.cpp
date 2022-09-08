@@ -37,6 +37,7 @@ void setup(SDL_Renderer* renderer) {
 	scene = new Scene;
 
 	model = new Model("cube.obj");
+
 	model->location = Vector(0, 0, 0);
 	model->rotation = Euler(0, 0, 0);
 	model->scale = Vector(50,50,50);
