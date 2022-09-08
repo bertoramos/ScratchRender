@@ -45,12 +45,13 @@ void setup(SDL_Renderer* renderer) {
 	camera = new Camera;
 	camera->zNear = 10;
 	camera->zFar = 200;
-	camera->fov = 3.14159286 / 2;
+	camera->fov = 3.14159286 / 3;
 	camera->dolly(-100);
 	camera->truck(-60);
 	camera->pan(3.1415 / 4);
 	camera->tilt(3.1415 / 4);
 	camera->boom(40);
+	camera->dolly(-100);
 
 	std::cout << camera->center << "\n";
 	std::cout << camera->forward << "\n";
